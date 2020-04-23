@@ -1,0 +1,19 @@
+version: '2'
+services:
+  ui:
+    build: ./frontend_final
+    ports:
+      - '3000:3000'
+    tty: true
+    depends_on:
+      - api
+  api:
+    build: ./ecommerce
+    ports:
+      - '8000:8000'
+    depends_on:
+      - chatapi
+  chatapi:
+    build: ./chatServer
+    ports:
+      - '4000:4000'
