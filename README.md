@@ -26,7 +26,9 @@ It is the online shopping site with a list of products. User can sign in sign up
 ## Independent Technologies
 
 - [x] socket.io
+    - Use socket.io to make connection between client and server.
 - [x] Docker
+    - We deployed the project on Docker.
 - [x] TypeScript
 
 # Environment
