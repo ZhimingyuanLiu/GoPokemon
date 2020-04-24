@@ -3,7 +3,7 @@
 /**
  * Get unique error field name
  */
-const uniqueMessage = error => {
+const uniqueMessage = (error) => {
   let output;
   try {
     let fieldName = error.message.substring(
@@ -24,7 +24,7 @@ const uniqueMessage = error => {
 /**
  * Get the erroror message from error object
  */
-exports.errorHandler = error => {
+exports.errorHandler = (error) => {
   let message = '';
 
   if (error.code) {

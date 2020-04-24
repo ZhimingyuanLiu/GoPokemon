@@ -1,11 +1,5 @@
-const {
-  Order,
-  CartItem
-} = require('../models/order');
-const {
-  errorHandler
-} = require('../utils/ErrorDB');
-// sendgrid for email npm i @sendgrid/mail
+const { Order, CartItem } = require('../models/order');
+const { errorHandler } = require('../utils/ErrorDB');
 
 exports.orderById = async (req, res, next, id) => {
   try {
@@ -55,13 +49,16 @@ exports.getStatusValues = (req, res) => {
 
 exports.updateOrderStatus = async (req, res) => {
   try {
-    const order = await Order.update({
-      _id: req.body.orderId
-    }, {
-      $set: {
-        status: req.body.status
+    const order = await Order.update(
+      {
+        _id: req.body.orderId,
+      },
+      {
+        $set: {
+          status: req.body.status,
+        },
       }
-    });
+    );
     res.json(order);
   } catch (err) {
     return res.status(400).json({
