@@ -1,9 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const { requireSignin, isAuth } = require('../controllers/auth');
-const { userById } = require('../controllers/user');
+const {
+    requireSignin,
+    isAuth
+} = require('../controllers/auth');
+const {
+    userById
+} = require('../controllers/user');
 
-const { generateToken } = require('../controllers/stripe');
+const {
+    generateToken
+} = require('../controllers/stripe');
 router.post('/stripe/getToken/:userId', requireSignin, isAuth, generateToken);
 
 router.param('userId', userById);
