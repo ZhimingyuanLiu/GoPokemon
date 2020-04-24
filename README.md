@@ -1,4 +1,4 @@
-Before build up the project, please add .env file into /ecommerce with the format
+Before build up the project, please add .env file into /nodeServer with the format
 
 MONGO_URL=your_mongo_url\
 PORT=8000\
