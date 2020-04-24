@@ -29,6 +29,10 @@ It is the online shopping site with a list of products. User can sign in sign up
 - [x] Docker
 - [x] TypeScript
 
+# License
+
+ This project is licensed under the ISC license.
+
 # Environment
 
 - Requirement
