@@ -6,7 +6,11 @@ const {
   update,
   purchaseHistory,
 } = require('../controllers/user');
-const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
+const {
+  requireSignin,
+  isAuth,
+  isAdmin
+} = require('../controllers/auth');
 
 router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
   res.json({

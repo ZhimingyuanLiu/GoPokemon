@@ -1,7 +1,9 @@
 const Product = require('../models/product');
 const formidable = require('formidable');
 const fs = require('fs');
-const { errorHandler } = require('../utils/ErrorDB');
+const {
+  errorHandler
+} = require('../utils/ErrorDB');
 
 const _ = require('lodash');
 
@@ -36,8 +38,15 @@ exports.create = async (req, res) => {
         error: 'Image could not be uploaded'
       });
     }
-    const { name, description, price, category, quantity, shipping } = fields;
-    console.log(name+','+description+','+price+','+quantity+','+shipping);
+    const {
+      name,
+      description,
+      price,
+      category,
+      quantity,
+      shipping
+    } = fields;
+    console.log(name + ',' + description + ',' + price + ',' + quantity + ',' + shipping);
     if (
       !name ||
       !description ||
@@ -99,7 +108,14 @@ exports.update = async (req, res) => {
         error: 'Image could not be uploaded'
       });
     }
-    const { name, description, price, category, quantity, shipping } = fields;
+    const {
+      name,
+      description,
+      price,
+      category,
+      quantity,
+      shipping
+    } = fields;
 
     if (
       !name ||
@@ -147,7 +163,9 @@ exports.list = async (req, res) => {
     const products = await Product.find()
       .select('-photo')
       .populate('category')
-      .sort([[sortBy, order]])
+      .sort([
+        [sortBy, order]
+      ])
       .limit(limit);
     res.send(products);
   } catch (err) {
@@ -161,9 +179,11 @@ exports.listRelated = async (req, res) => {
   try {
     let limit = req.query.limit ? parseInt(req.query.limit) : 6;
     const products = await Product.find({
-      _id: { $ne: req.product },
-      category: req.product.category
-    })
+        _id: {
+          $ne: req.product
+        },
+        category: req.product.category
+      })
       .limit(limit)
       .populate('category', '_id name');
     res.json(products);
@@ -214,7 +234,9 @@ exports.listBySearch = async (req, res) => {
     const data = await Product.find(findArgs)
       .select('-photo')
       .populate('category')
-      .sort([[sortBy, order]])
+      .sort([
+        [sortBy, order]
+      ])
       .skip(skip)
       .limit(limit);
     res.json({
@@ -241,7 +263,10 @@ exports.listSearch = (req, res) => {
   const query = {};
   // assign search value to query.name
   if (req.query.search) {
-    query.name = { $regex: req.query.search, $options: 'i' };
+    query.name = {
+      $regex: req.query.search,
+      $options: 'i'
+    };
     // assigne category value to query.category
     if (req.query.category && req.query.category != 'All') {
       query.category = req.query.category;
@@ -263,8 +288,15 @@ exports.decreaseQuantity = (req, res, next) => {
   let bulkOps = req.body.order.products.map(item => {
     return {
       updateOne: {
-        filter: { _id: item._id },
-        update: { $inc: { quantity: -item.count, sold: +item.count } }
+        filter: {
+          _id: item._id
+        },
+        update: {
+          $inc: {
+            quantity: -item.count,
+            sold: +item.count
+          }
+        }
       }
     };
   });
@@ -278,4 +310,3 @@ exports.decreaseQuantity = (req, res, next) => {
     next();
   });
 };
-

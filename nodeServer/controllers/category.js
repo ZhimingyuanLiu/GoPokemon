@@ -1,5 +1,7 @@
 const Category = require('../models/category');
-const { errorHandler } = require('../utils/ErrorDB');
+const {
+  errorHandler
+} = require('../utils/ErrorDB');
 
 exports.categoryById = async (req, res, next, id) => {
   try {
@@ -22,7 +24,9 @@ exports.create = async (req, res) => {
   try {
     const category = new Category(req.body);
     const data = await category.save();
-    res.json({ data });
+    res.json({
+      data
+    });
   } catch (err) {
     res.status(400).json({
       error: errorHandler(err)
