@@ -8,7 +8,7 @@ It is the online shopping site with a list of products. User can sign in sign up
   - [Shaopeng Ge](https://github.com/ShaopengGe)
   - [Zhimingyuan Li](https://github.com/ZhimingyuanLiu)
   - [Zihan Li](https://github.com/lizihannnnn)
-  - [Jiahua Zhou](https://github.com/JaverC)
+  - [Jiahua Zhou]()
 
 # Technologies
 
@@ -31,7 +31,7 @@ It is the online shopping site with a list of products. User can sign in sign up
 
 # License
 
-This project is licensed under the ISC license.
+ This project is licensed under the ISC license.
 
 # Environment
 
@@ -41,14 +41,8 @@ This project is licensed under the ISC license.
   - docker
 - Build & Run
   - `run docker-compose up --build`
-    - LocalHost ports:
-      - NodeSever: 3000
-      - ChatServer: 4000
-      - FrontEnd: 8000
-    - Docker expose ports:
-      - NodeSever: 80
-      - ChatServer: 90
-      - FrontEnd: 70
+    - Using ports: NodeSever: 3000, ChatServer: 4000, FrontEnd: 8000
+    - Docker ports: NodeSever: 80, ChatServer: 90, FrontEnd: 70
 
 # Demo
 
