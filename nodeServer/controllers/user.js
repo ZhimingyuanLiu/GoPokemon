@@ -58,22 +58,6 @@ exports.update = (req, res) => {
         });
     });
 };
-// exports.update = async (req, res) => {
-//   try {
-//     const user = await User.findOneAndUpdate(
-//       { _id: req.profile._id },
-//       { $set: req.body },
-//       { new: true }
-//     );
-//     user.hashed_password = undefined;
-//     user.salt = undefined;
-//     res.json(user);
-//   } catch (err) {
-//     return res.status(400).json({
-//       error: 'You are not authried to perform this action',
-//     });
-//   }
-// };
 
 exports.addOrderToUserHistory = (req, res, next) => {
   let history = [];
