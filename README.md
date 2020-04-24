@@ -1,14 +1,28 @@
-Before build up the project, please add .env file into /nodeServer with the format
+# GoPokemon
+## Project Description
+It is the online shopping site with a list of products. User can sign in sign up, buy the products, and checkout. Admin can manage the products project, update the admin profile, manage the users also. The site has the features for users to sort the product with some key words for users.
+    
+# Technologies
+## Course Technologies
+- [x] Express.js
+- [x] React
+- [x] Next.js
+- [x] Redis
 
-MONGO_URL=your_mongo_url\
-PORT=8000\
-STRIPE_SECRET_KEY=your_stripe_secret_key\
-JWT_SECRET=liuzhimingyuan\
-JWT_EXPIRES_IN=90d\
-JWT_COOKIE_EXPIRES_IN=90
+## Independent Technologies
+- [x] socket.io
+- [x] Docker
+- [x] ____
 
-then register for docker hub account\
-run docker-compose up --build
+# Environment
+- Requirement
+    - nodejs
+    - npm
+    - docker
+- Build & Run
+    - `run docker-compose up --build`
+        - Using ports: 3000, 4000, 8000
 
-YOUTUBE LINK\
-[![](http://img.youtube.com/vi/UJGKoIhfZO8/0.jpg)](http://www.youtube.com/watch?v=UJGKoIhfZO8 'Pokemon')
+# Demo
+[Youtube](http://www.youtube.com/watch?v=UJGKoIhfZO8 'Pokemon')  
+![](https://img.youtube.com/vi/UJGKoIhfZO8/0.jpg)
