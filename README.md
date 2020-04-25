@@ -52,5 +52,4 @@ This project is licensed under the ISC license.
 
 # Demo
 
-[Youtube](http://www.youtube.com/watch?v=UJGKoIhfZO8 'Pokemon')  
-![](https://img.youtube.com/vi/UJGKoIhfZO8/0.jpg)
+[![](http://img.youtube.com/vi/jwvzXc1K1ng/0.jpg)](http://www.youtube.com/watch?v=jwvzXc1K1ng)
